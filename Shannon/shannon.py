@@ -1,5 +1,3 @@
-from functools import total_ordering
-from math import log2
 from collections import defaultdict
 import operator
 import sys
@@ -26,38 +24,6 @@ def avgLengthOutput(probability: {str: int}, codes: {str: str}) -> int :
     for i in probability:
         avgLen += probability[i] * len(codes[i])
     return avgLen    
-
-@total_ordering
-class Char:
-    def __init__(self, name, freq) -> None:
-        self._name = name
-        self._freq = freq
-        self._code = ""
-
-    def __lt__(self, other):
-        return True if self._freq < other.get_freq() else False
-
-    def __eq__(self, other):
-        return True if self._name == other.get_name() and self._freq == other.get_freq() else False
-
-    def __str__(self):
-        return "{0}\t {1}\t {2}".format(self._name, str(self._freq), self._code)
-
-    def __iter__(self):
-        return self
-
-    def get_name(self):
-        return self._name
-
-    def get_freq(self):
-        return self._freq
-
-    def get_code(self):
-        return self._code
-
-    def append_code(self, code):
-        self._code += str(code)
-
 
 def findMid(lst, chars):
     if len(chars) == 1: return None
