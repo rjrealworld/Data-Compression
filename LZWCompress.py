@@ -37,4 +37,4 @@ if __name__ == "__main__":
     print ("Input message is : ", input)        
     print ("Encoded message is : ", output)
     print("The size of the input message is : ", sys.getsizeof(input))
-    print("The size of the encoded message is : ", sys.getsizeof(int(output,base = 2)))
+    print("The size of the encoded message is : ", sys.getsizeof(int(output,base = 10)))
